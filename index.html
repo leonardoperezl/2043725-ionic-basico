@@ -4,15 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <title>PRACTICA 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <label for="">Inserta texto abajo:</label>
-    <input type="text" id="campoTxt" />
+    <div class="contenido">
+      <div class="contenido__userInfo">
+        <label class="contendo__userInfo-inputLabel">Usuario:</label>
+        <input type="text" id="campoUser" />
+        <label class="contendo__userInfo-inputLabel">Contraseña:</label>
+        <input type="password" id="campoPassword" />
+      </div>
 
-    <button onclick="imprimirTexto()">Click</button>
-    <button onclick="borrarTexto()">Borrar</button>
+      <div class="contenido__buttons">
+        <button class="pageButton" type="button" onclick="iniciarSesion()">
+          Iniciar Sesion
+        </button>
+        <button class="pageButton" type="button" onclick="registrarse()">
+          Registrarse
+        </button>
+      </div>
+      <p></p>
+    </div>
   </body>
 
   <script src="script.js"></script>

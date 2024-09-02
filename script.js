@@ -1,11 +1,14 @@
-function imprimirTexto() {
-  var campoTexto = document.getElementById("campoTxt");
-  var texto = campoTexto.value;
+var campoUser = document.getElementById("campoUser");
+var campoPassword = document.getElementById("campoPassword");
 
-  console.log(texto);
+var parrafo = document.querySelector("p");
+
+function iniciarSesion() {
+  var username = campoUser.value;
+  parrafo.innerHTML = `Login correcto <strong>${username}</strong>`;
 }
 
-function borrarTexto() {
-  var campoTexto = document.getElementById("campoTxt");
-  campoTexto.value = "";
+function registrarse() {
+  var username = campoUser.value;
+  parrafo.innerHTML = `Registro con éxito <strong>${username}</strong>`;
 }
