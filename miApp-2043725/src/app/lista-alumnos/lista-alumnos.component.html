@@ -1,16 +1,48 @@
-<!-- <div *ngFor="let alumno of alumnos">
-  {{ alumno }}
-</div> -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="light"> 
+    <ion-title>
+      Lista de Alumnos: <br>
+      Lab. Apps Moviles 033
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-list>
-  <ion-item-sliding *ngFor="let alumno of alumnos">
-    <ion-item>
-      <ion-label>{{ alumno }}</ion-label>
-    </ion-item>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <form #alumnoForm="ngForm" (ngSubmit)="agregarAlumno()">
+    <ion-label class="nombre-label"> 
+      Nombre del alumno 
+    </ion-label>
+    <ion-input required [(ngModel)]="nuevoAlumno.nombre" placeholder="Ej: Leonardo Pérez" name="nombre"></ion-input>
+    <ion-label>
+      <ion-checkbox [(ngModel)]="nuevoAlumno.presente" name="presente" labelPlacement="end">
+        Presente 
+      </ion-checkbox>
+    </ion-label>
+    <div>
+      <ion-button type="submit" shape="round" fill="outline"> Agregar Alumno </ion-button>
+    </div>
+  </form>
 
-    <ion-item-options>
-      <ion-item-option color="success">Agregar a Favoritos</ion-item-option>
-      <ion-item-option color="danger" id="deleteButton" (click)="presentActionSheet()">Eliminar</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
+  <ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          Nombre
+        </ion-col>
+        <ion-col>
+          Asistencia
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngFor="let alumno of alumnos">
+        <ion-col>
+          {{ alumno.nombre }}
+        </ion-col>
+        <ion-col>
+          {{ alumno.presente }}
+        </ion-col>
+      
+      </ion-row>
+    </ion-grid>
+  </ion-label>
+</ion-content>
