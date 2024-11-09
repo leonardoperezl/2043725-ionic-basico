@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonList, IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOption, IonActionSheet, IonButton, ActionSheetController } from "@ionic/angular/standalone";
 
@@ -7,7 +7,7 @@ import { IonList, IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOpti
   templateUrl: './lista-alumnos.component.html',
   styleUrls: ['./lista-alumnos.component.scss'],
   standalone: true,
-  imports: [IonButton, IonActionSheet, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonItem, IonList, CommonModule],
+  imports: [IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonItem, IonList, CommonModule],
 })
 export class ListaAlumnosComponent {
   alumnos: string[];
