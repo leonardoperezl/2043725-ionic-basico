@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
+  
 })
 export class ConsultaService {
   private apiUrl = 'https://fakestoreapi.com/products';
@@ -12,5 +13,9 @@ export class ConsultaService {
 
   getProductos(): Observable<any> {
     return this.http.get<any>(this.apiUrl)
+  }
+
+  getProducto(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
