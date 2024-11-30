@@ -6,6 +6,7 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -14,4 +15,6 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     importProvidersFrom(HttpClientModule)
   ],
+}).then(() => {
+  defineCustomElements(window)
 });
